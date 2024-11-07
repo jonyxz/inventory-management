@@ -1,16 +1,21 @@
 FROM php:8.1-fpm
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
     libpng-dev \
-    libjpeg62-turbo-dev \
+    libjpeg-dev \
     libfreetype6-dev \
     libzip-dev \
     zip \
     unzip \
     git \
     sqlite3 \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd pdo pdo_sqlite zip
+    libsqlite3-dev \
+    pkg-config \
+    && apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    docker-php-ext-configure gd --with-freetype --with-jpeg && \
+    docker-php-ext-install -j$(nproc) gd pdo pdo_sqlite zip
 
 COPY --from=composer:2.1 /usr/bin/composer /usr/bin/composer
 
