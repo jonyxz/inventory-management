@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   app:
     build:
@@ -7,9 +8,9 @@ services:
     image: inventory-management-app
     container_name: inventory-app
     restart: unless-stopped
-    working_dir: /var/www
+    working_dir: /var/www/code
     volumes:
-      - .:/var/www
+      - ./code:/var/www/code
     ports:
       - "8000:8000"
     environment:
@@ -17,4 +18,4 @@ services:
       - APP_DEBUG=true
       - APP_KEY=base64:GENERATE_YOUR_KEY
       - DB_CONNECTION=sqlite
-      - DB_DATABASE=/var/www/database/database.sqlite
+      - DB_DATABASE=/var/www/code/database/database.sqlite
