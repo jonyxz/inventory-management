@@ -21,6 +21,7 @@ RUN apt-get update && \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 WORKDIR /var/www/code
+RUN composer require filament/filament
 
 EXPOSE 9000
 
