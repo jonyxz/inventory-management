@@ -1,5 +1,5 @@
 services:
-  app:
+  inventory-app:
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,11 +9,31 @@ services:
     working_dir: /var/www/code
     volumes:
       - ./code:/var/www/code
-      - ./code/database:/var/www/code/database
     ports:
       - "8000:8000"
     environment:
       - APP_ENV=local
       - APP_DEBUG=true
-      - DB_CONNECTION=sqlite
-      - DB_DATABASE=/var/www/code/database/database.sqlite
+      - DB_CONNECTION=pgsql
+      - DB_HOST=db
+      - DB_PORT=5502
+      - DB_DATABASE=inventory
+      - DB_USERNAME=admin
+      - DB_PASSWORD=katasandi
+    depends_on:
+      - db
+  db:
+    image: postgres:17.0
+    container_name: inventory-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: katasandi
+      POSTGRES_DB: inventory
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5502:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/pgdata
+
+volumes:
+  postgres_data:
