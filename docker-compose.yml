@@ -16,7 +16,7 @@ services:
       - APP_DEBUG=true
       - DB_CONNECTION=pgsql
       - DB_HOST=db
-      - DB_PORT=5502
+      - DB_PORT=5432
       - DB_DATABASE=inventory
       - DB_USERNAME=admin
       - DB_PASSWORD=katasandi
