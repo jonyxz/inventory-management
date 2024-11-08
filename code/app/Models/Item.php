@@ -30,4 +30,9 @@ class Item extends Model
     {
         return $this->belongsTo(Supplier::class);
     }
+
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class);
+    }
 }

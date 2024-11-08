@@ -15,4 +15,9 @@ class Supplier extends Model
     {
         return $this->hasMany(Item::class);
     }
+
+    public function categorys()
+    {
+        return $this->belongsToMany(Category::class);
+    }
 }
