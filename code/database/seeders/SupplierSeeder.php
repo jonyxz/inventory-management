@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Supplier;
 use Illuminate\Database\Seeder;
 
 class SupplierSeeder extends Seeder
@@ -12,6 +12,22 @@ class SupplierSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Supplier::create([
+            'name' => 'Acme Electronics',
+            'contact_info' => '123 Main St, Anytown USA',
+            'created_by' => 1
+        ]);
+
+        Supplier::create([
+            'name' => 'ABC Clothing Co.',
+            'contact_info' => '456 Oak Rd, Somewhere City',
+            'created_by' => 1
+        ]);
+
+        Supplier::create([
+            'name' => 'XYZ Home Supplies',
+            'contact_info' => '789 Elm Ave, Somewhere Else',
+            'created_by' => 1
+        ]);
     }
 }
