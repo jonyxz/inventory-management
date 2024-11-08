@@ -13,8 +13,8 @@ class Admin extends Model
         'username',
         'password',
         'email',
-        'created_at',
-        'updated_at'
+        // 'created_at',
+        // 'updated_at'
     ];
 
     public function items()

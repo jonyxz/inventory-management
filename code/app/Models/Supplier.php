@@ -9,14 +9,18 @@ class Supplier extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'contact_info', 'created_by'];
+    protected $fillable = [
+        'name', 
+        'contact_info', 
+        'created_by'
+    ];
 
     public function items()
     {
         return $this->hasMany(Item::class);
     }
 
-    public function categorys()
+    public function categories()
     {
         return $this->belongsToMany(Category::class);
     }

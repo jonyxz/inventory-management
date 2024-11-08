@@ -17,8 +17,8 @@ class Item extends Model
         'category_id',
         'supplier_id',
         'created_by',
-        'created_at',
-        'updated_at'
+        // 'created_at',
+        // 'updated_at'
     ];
 
     public function category()
