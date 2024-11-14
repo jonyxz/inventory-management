@@ -22,7 +22,14 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 WORKDIR /var/www/code
 
+COPY ./code /var/www/code
+
+RUN if [ ! -d "vendor" ]; then \
+    cp .env.example .env && \
+    composer install && \
+    php artisan key:generate; \
+    fi
+
 EXPOSE 8000
 
-CMD ["/bin/sh", "-c", "if [ ! -d 'vendor' ]; then composer install; fi && if [ -z \"$APP_KEY\" ]; then php artisan key:generate; fi && php artisan serve --host=0.0.0.0 --port=8000"]
-# CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]

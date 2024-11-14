@@ -4,13 +4,32 @@
     Muhammad Fachruddin / A11.2022.14476
 
 
-# Filament docker 
+# Laravel Filament Inventory Management
 
-## Installation
+Sebuah aplikasi manajemen inventaris berbasis Laravel Filament yang berjalan di dalam Docker, dengan PostgreSQL sebagai database.
+- **Ringkasan Stok Barang**: Widget ringkasan stok langsung di dashboard admin untuk memantau stok, nilai stok, dan harga rata-rata
 
+## 🛠️ Persyaratan
+
+- **Docker** dan **Docker Compose**
+
+## 📥 Clone Repository
+
+    ```bash
+    git clone https://github.com/jonyxz/inventory-management.git
+    cd inventory-management
+    ```
+
+
+## 📦 Instalasi 
+    
+### 1. Salin Konfigurasi .env
     ```bash
     cd code
     cp .env.example .env
-    docker-compose run --rm inventory-app composer install
-    docker-compose run --rm inventory-app php artisan key:generate
+    ```
+
+### 3. Jalankan Aplikasi
+    ```bash
+    docker-compose up -d --build
     ```
