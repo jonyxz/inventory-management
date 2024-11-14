@@ -1,7 +1,7 @@
-    Nama Kelompok:
-    Reza Aditya Ramadhan / A11.2022.14467
-    Johan Ridho Akbar Auradhana / A11.2022.14472
-    Muhammad Fachruddin / A11.2022.14476
+- **Disusun oleh**:
+  - Reza Aditya Ramadhan / A11.2022.14467
+  - Johan Ridho Akbar Auradhana / A11.2022.14472
+  - Muhammad Fachruddin / A11.2022.14476
 
 
 # Laravel Filament Inventory Management
@@ -45,3 +45,14 @@ Mengisi database dengan data dummy (opsional):
     ```bash
     php artisan migrate:fresh --seed
     ```
+
+### 🌐 Akses Aplikasi
+
+Setelah aplikasi berjalan, Anda dapat mengakses dashboard admin melalui:
+
+- **URL**: [http://localhost:8000](http://localhost:8000)
+- **Login Admin**:
+  - **Email**: `admin@example.com`
+  - **Password**: `katasandi`
+
+> **Catatan**: Jika Anda menggunakan data dummy, akun admin dengan email `admin@example.com` dan password `katasandi` sudah disediakan.

@@ -56,7 +56,9 @@ class ItemResource extends Resource
                 Tables\Columns\TextColumn::make('description')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('price')
-                    ->money()
+                    ->getStateUsing(function ($record) {
+                        return 'Rp. ' . number_format($record->price, 2, ',', '.'); // Menambahkan "Rp." dan format dengan titik sebagai pemisah ribuan
+                    })
                     ->sortable(),
                 Tables\Columns\TextColumn::make('quantity')
                     ->numeric()
