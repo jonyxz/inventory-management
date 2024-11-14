@@ -17,6 +17,13 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use App\Filament\Widgets\StockSummaryWidget;
+use App\Filament\Widgets\LowStockWidget;
+use App\Filament\Widgets\ItemsByCategoryWidget;
+use App\Filament\Widgets\CategorySummaryWidget;
+use App\Filament\Widgets\SupplierSummaryWidget;
+use App\Filament\Widgets\OverallSummaryWidget;
+
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -34,6 +41,16 @@ class AdminPanelProvider extends PanelProvider
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 Pages\Dashboard::class,
+            ])
+            ->widgets([
+                Widgets\AccountWidget::class,
+                Widgets\FilamentInfoWidget::class,
+                StockSummaryWidget::class,
+                LowStockWidget::class,
+                // ItemsByCategoryWidget::class,
+                // CategorySummaryWidget::class,
+                // SupplierSummaryWidget::class,
+                // OverallSummaryWidget::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
@@ -54,5 +71,5 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ]);
-    }
+    }   
 }
