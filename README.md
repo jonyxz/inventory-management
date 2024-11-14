@@ -15,10 +15,10 @@ Sebuah aplikasi manajemen inventaris berbasis Laravel Filament yang berjalan di 
 
 ## 📥 Clone Repository
 
-    ```bash
+```bash
     git clone https://github.com/jonyxz/inventory-management.git
     cd inventory-management
-    ```
+```
 
 ## 📦 Instalasi 
 
@@ -26,25 +26,25 @@ Sebuah aplikasi manajemen inventaris berbasis Laravel Filament yang berjalan di 
 
 Build dan jalankan aplikasi menggunakan `docker compose` :
 
-    ```bash
+```bash
     docker-compose up -d --build
-    ```
+```
 
 ### Migrasi Database
 
 Masuk ke shell container aplikasi `inventory-management-app` dan migrasi database untuk membuat tabel:
 
-    ```bash
+```bash
     php artisan migrate
-    ```
+```
 
 ### Tambahkan Data Dummy
 
 Mengisi database dengan data dummy (opsional):
 
-    ```bash
+```bash
     php artisan migrate:fresh --seed
-    ```
+```
 
 ### 🌐 Akses Aplikasi
 
