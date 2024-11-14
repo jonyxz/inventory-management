@@ -26,11 +26,18 @@ class SupplierSummaryWidget extends BaseWidget
             Tables\Columns\TextColumn::make('items_count')
                 ->label('Total Items Supplied')
                 ->counts('items'), 
+            Tables\Columns\TextColumn::make('total_stock')
+                ->label('Total Stock')
+                ->getStateUsing(function ($record) {
+                    return $record->items->sum(function ($item) {
+                        return $item->quantity;
+                    });
+                }),
             Tables\Columns\TextColumn::make('total_stock_value')
                 ->label('Total Stock Value')
                 ->getStateUsing(function ($record) {
                     return $record->items->sum(function ($item) {
-                        return $item->quantity;
+                        return $item->price * $item->quantity;
                     });
                 }),
             Tables\Columns\TextColumn::make('average_price')

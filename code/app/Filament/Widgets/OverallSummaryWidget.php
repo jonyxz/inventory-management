@@ -14,7 +14,8 @@ class OverallSummaryWidget extends BaseWidget
     protected function getStats(): array
     {
         $totalItems = Item::count();
-        $totalStockValue = Item::sum(DB::raw('quantity'));
+        $totalStock = Item::sum(DB::raw('quantity'));
+        $totalStockValue = Item::sum(DB::raw('price * quantity'));
         $totalCategories = Category::count();
         $totalSuppliers = Supplier::count();
 
@@ -23,6 +24,10 @@ class OverallSummaryWidget extends BaseWidget
                 ->description('Total number of items in inventory')
                 ->icon('heroicon-o-cube'),
 
+            Stat::make('Total Stock Value', number_format($totalStock))
+                ->description('Total all items in stock')
+                ->icon('heroicon-o-cube'),
+                
             Stat::make('Total Stock Value', number_format($totalStockValue, 2))
                 ->description('Total value of all items in stock')
                 ->icon('heroicon-o-currency-dollar'),
