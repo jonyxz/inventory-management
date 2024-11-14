@@ -12,7 +12,7 @@ class StockSummaryWidget extends BaseWidget
     protected function getStats(): array
     {
         $totalStock = Item::sum('quantity');
-        $totalStockValue = Item::sum(DB::raw('price * quantity'));
+        $totalStockValue = Item::sum(DB::raw('quantity'));
         $averagePrice = Item::avg('price');
 
         return [

@@ -49,8 +49,8 @@ class AdminPanelProvider extends PanelProvider
                 LowStockWidget::class,
                 ItemsByCategoryWidget::class,
                 CategorySummaryWidget::class,
-                // SupplierSummaryWidget::class,
-                // OverallSummaryWidget::class,
+                SupplierSummaryWidget::class,
+                OverallSummaryWidget::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
