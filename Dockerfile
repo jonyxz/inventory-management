@@ -24,4 +24,5 @@ WORKDIR /var/www/code
 
 EXPOSE 8000
 
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+CMD ["/bin/sh", "-c", "if [ ! -d 'vendor' ]; then composer install; fi && if [ -z \"$APP_KEY\" ]; then php artisan key:generate; fi && php artisan serve --host=0.0.0.0 --port=8000"]
+# CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
