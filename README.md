@@ -20,16 +20,22 @@ Sebuah aplikasi manajemen inventaris berbasis Laravel Filament yang berjalan di 
     cd inventory-management
     ```
 
-
 ## 📦 Instalasi 
-    
-### 1. Salin Konfigurasi .env
-    ```bash
-    cd code
-    cp .env.example .env
-    ```
 
-### 3. Jalankan Aplikasi
+### Jalankan aplikasi menggunakan `docker compose`
     ```bash
     docker-compose up -d --build
+    ```
+
+### data tabel dalam postgres
+
+attach shell pada docker dengan container `inventory-management-app`
+    
+    ```bash
+    php artisan migrate
+    ```
+
+### data dummy
+    ```bash
+    php artisan migrate:fresh --seed
     ```
