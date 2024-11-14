@@ -31,6 +31,6 @@ class LowStockWidget extends BaseWidget
             ])
             ->headerActions([])
             ->filters([])
-            ->paginated(5); // Mengganti pagination() dengan paginated()
+            ->paginated(5); 
     }
 }
