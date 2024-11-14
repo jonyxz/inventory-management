@@ -1,3 +1,9 @@
+    Nama Kelompok:
+    Reza Aditya Ramadhan / A11.2022.14467
+    Johan Ridho Akbar Auradhana / A11.2022.14472
+    Muhammad Fachruddin / A11.2022.14476
+
+
 # Filament docker 
 
 ## Installation
