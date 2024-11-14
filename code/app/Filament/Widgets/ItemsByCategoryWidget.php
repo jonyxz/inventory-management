@@ -38,6 +38,6 @@ class ItemsByCategoryWidget extends BaseWidget
 
     protected function getTablePagination(): ?int
     {
-        return 10; // Batasi jumlah baris per halaman
+        return 10; 
     }
 }

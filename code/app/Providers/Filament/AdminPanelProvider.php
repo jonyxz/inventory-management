@@ -47,8 +47,8 @@ class AdminPanelProvider extends PanelProvider
                 Widgets\FilamentInfoWidget::class,
                 StockSummaryWidget::class,
                 LowStockWidget::class,
-                // ItemsByCategoryWidget::class,
-                // CategorySummaryWidget::class,
+                ItemsByCategoryWidget::class,
+                CategorySummaryWidget::class,
                 // SupplierSummaryWidget::class,
                 // OverallSummaryWidget::class,
             ])
