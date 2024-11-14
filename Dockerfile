@@ -24,12 +24,6 @@ WORKDIR /var/www/code
 
 COPY ./code /var/www/code
 
-RUN if [ ! -d "vendor" ]; then \
-    cp .env.example .env && \
-    composer install && \
-    php artisan key:generate; \
-    fi
-
 EXPOSE 8000
 
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
