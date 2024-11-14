@@ -16,23 +16,26 @@ class Item extends Model
         'quantity',
         'category_id',
         'supplier_id',
-        'created_by',
-        // 'created_at',
-        // 'updated_at'
+        'created_by'
+    ];
+
+    protected $casts = [
+        'price' => 'float',
+        'quantity' => 'integer',
     ];
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     public function supplier()
     {
-        return $this->belongsTo(Supplier::class);
+        return $this->belongsTo(Supplier::class, 'supplier_id');
     }
 
     public function admin()
     {
-        return $this->belongsTo(Admin::class);
+        return $this->belongsTo(Admin::class, 'created_by');
     }
 }

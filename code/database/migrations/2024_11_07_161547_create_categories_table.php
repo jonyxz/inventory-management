@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('created_by');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
-            $table->foreign('created_by')->references('id')->on('admins');
+            $table->foreign('created_by')->references('id')->on('admins')->cascadeOnDelete();
         });
     }
 

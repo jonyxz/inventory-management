@@ -11,21 +11,16 @@ class Category extends Model
     protected $fillable = [
         'name',
         'description',
-        'price',
-        'quantity',
-        'category_id',
-        'supplier_id',
         'created_by',
-        // 'created_at',
-        // 'updated_at'
     ];
-    public function items()
+    
+    public function admin()
     {
-        return $this->hasMany(Item::class);
+        return $this->belongsTo(Admin::class, 'created_by');
     }
 
-    public function Suppliers()
+    public function items()
     {
-        return $this->belongsToMany(Supplier::class);
+        return $this->hasMany(Item::class, 'category_id');
     }
 }

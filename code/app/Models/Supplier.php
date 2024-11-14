@@ -17,11 +17,11 @@ class Supplier extends Model
 
     public function items()
     {
-        return $this->hasMany(Item::class);
+        return $this->hasMany(Item::class,'supplier_id');
     }
 
-    public function categories()
+    public function admin()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsTo(Admin::class, 'created_by');
     }
 }
