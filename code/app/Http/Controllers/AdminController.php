@@ -28,7 +28,7 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:admins',
             'password' => 'required|string|min:8',
         ]);
@@ -63,7 +63,7 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'sometimes|required|string|max:255',
+            'username' => 'sometimes|required|string|max:255',
             'email' => 'sometimes|required|string|email|max:255|unique:admins,email,' . $id,
             'password' => 'sometimes|required|string|min:8',
         ]);
