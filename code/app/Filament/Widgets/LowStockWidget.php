@@ -9,7 +9,7 @@ use App\Models\Item;
 
 class LowStockWidget extends BaseWidget
 {
-    protected int | string | array $columnSpan = 'full'; // Memungkinkan widget untuk mengisi lebar penuh dashboard
+    protected int | string | array $columnSpan = 'full';
 
     public function table(Table $table): Table
     {
@@ -27,10 +27,10 @@ class LowStockWidget extends BaseWidget
                     ->sortable(),
                 Tables\Columns\TextColumn::make('price')
                     ->label('Price')
-                    ->money('USD', true), // Menampilkan format uang
+                    ->money('USD', true),
             ])
             ->headerActions([])
-            ->filters([]) // Tambahkan filter jika diperlukan
-            ->pagination(5); // Batasi jumlah baris per halaman jika diperlukan
+            ->filters([])
+            ->paginated(5); // Mengganti pagination() dengan paginated()
     }
 }
