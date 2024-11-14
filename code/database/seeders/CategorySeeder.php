@@ -29,5 +29,47 @@ class CategorySeeder extends Seeder
             'description' => 'Household items and décor',
             'created_by' => 1
         ]);
+
+        Category::create([
+            'name' => 'Books',
+            'description' => 'Books and literature',
+            'created_by' => 1
+        ]);
+
+        Category::create([
+            'name' => 'Sports',
+            'description' => 'Sports equipment and apparel',
+            'created_by' => 1
+        ]);
+
+        Category::create([
+            'name' => 'Toys',
+            'description' => 'Toys and games for children',
+            'created_by' => 1
+        ]);
+
+        Category::create([
+            'name' => 'Beauty',
+            'description' => 'Beauty products and cosmetics',
+            'created_by' => 1
+        ]);
+
+        Category::create([
+            'name' => 'Automotive',
+            'description' => 'Automotive parts and accessories',
+            'created_by' => 1
+        ]);
+
+        Category::create([
+            'name' => 'Garden',
+            'description' => 'Garden tools and accessories',
+            'created_by' => 1
+        ]);
+
+        Category::create([
+            'name' => 'Health',
+            'description' => 'Health and wellness products',
+            'created_by' => 1
+        ]);
     }
 }
