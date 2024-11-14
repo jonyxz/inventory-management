@@ -7,7 +7,7 @@
 # Laravel Filament Inventory Management
 
 Sebuah aplikasi manajemen inventaris berbasis Laravel Filament yang berjalan di dalam Docker, dengan PostgreSQL sebagai database.
-- **Ringkasan Stok Barang**: Widget ringkasan stok langsung di dashboard admin untuk memantau stok, nilai stok, dan harga rata-rata
+- **Widget Ringkasan Stok Barang**: Tampilkan langsung di dashboard admin untuk memantau stok, nilai stok, dan harga rata-rata.
 
 ## 🛠️ Persyaratan
 
@@ -22,20 +22,26 @@ Sebuah aplikasi manajemen inventaris berbasis Laravel Filament yang berjalan di 
 
 ## 📦 Instalasi 
 
-### Jalankan aplikasi menggunakan `docker compose`
+### Build Aplikasi
+
+Build dan jalankan aplikasi menggunakan `docker compose` :
+
     ```bash
     docker-compose up -d --build
     ```
 
-### data tabel dalam postgres
+### Migrasi Database
 
-attach shell pada docker dengan container `inventory-management-app`
-    
+Masuk ke shell container aplikasi `inventory-management-app` dan migrasi database untuk membuat tabel:
+
     ```bash
     php artisan migrate
     ```
 
-### data dummy
+### Tambahkan Data Dummy
+
+Mengisi database dengan data dummy (opsional):
+
     ```bash
     php artisan migrate:fresh --seed
     ```
