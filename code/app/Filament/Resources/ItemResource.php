@@ -31,7 +31,7 @@ class ItemResource extends Resource
                 Forms\Components\TextInput::make('price')
                     ->required()
                     ->numeric()
-                    ->prefix('$'),
+                    ->prefix('Rp. '),
                 Forms\Components\TextInput::make('quantity')
                     ->required()
                     ->numeric(),

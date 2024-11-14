@@ -44,7 +44,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->widgets([
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
+                // Widgets\FilamentInfoWidget::class,
                 StockSummaryWidget::class,
                 LowStockWidget::class,
                 ItemsByCategoryWidget::class,

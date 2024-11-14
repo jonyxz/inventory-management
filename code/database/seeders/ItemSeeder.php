@@ -15,8 +15,8 @@ class ItemSeeder extends Seeder
         Item::create([
             'name' => 'Laptop',
             'description' => 'High-performance laptop',
-            'price' => 999.99,
-            'quantity' => 20,
+            'price' => 15000000,
+            'quantity' => 4,
             'category_id' => 1,
             'supplier_id' => 1,
             'created_by' => 1
@@ -25,27 +25,27 @@ class ItemSeeder extends Seeder
         Item::create([
             'name' => 'T-Shirt',
             'description' => 'Cotton t-shirt',
-            'price' => 19.99,
+            'price' => 180000,
             'quantity' => 50,
             'category_id' => 2,
             'supplier_id' => 2,
-            'created_by' => 1
+            'created_by' => 2
         ]);
 
         Item::create([
             'name' => 'Desk Lamp',
             'description' => 'Adjustable desk lamp',
-            'price' => 29.99,
+            'price' => 80000,
             'quantity' => 30,
             'category_id' => 3,
             'supplier_id' => 3,
-            'created_by' => 1
+            'created_by' => 3
         ]);
 
         Item::create([
             'name' => 'Smartphone',
             'description' => 'Latest model smartphone',
-            'price' => 699.99,
+            'price' => 5000000,
             'quantity' => 25,
             'category_id' => 1,
             'supplier_id' => 1,
@@ -55,61 +55,61 @@ class ItemSeeder extends Seeder
         Item::create([
             'name' => 'Jeans',
             'description' => 'Denim jeans',
-            'price' => 49.99,
+            'price' => 320000,
             'quantity' => 40,
             'category_id' => 2,
             'supplier_id' => 2,
-            'created_by' => 1
+            'created_by' => 2
         ]);
 
         Item::create([
             'name' => 'Blender',
             'description' => 'Kitchen blender',
-            'price' => 59.99,
-            'quantity' => 15,
+            'price' => 150000,
+            'quantity' => 4,
             'category_id' => 3,
             'supplier_id' => 3,
-            'created_by' => 1
+            'created_by' => 3
         ]);
 
         Item::create([
             'name' => 'Novel',
             'description' => 'Bestselling novel',
-            'price' => 14.99,
-            'quantity' => 60,
+            'price' => 75000,
+            'quantity' => 25,
             'category_id' => 4,
             'supplier_id' => 4,
-            'created_by' => 1
+            'created_by' => 2
         ]);
 
         Item::create([
             'name' => 'Basketball',
             'description' => 'Official size basketball',
-            'price' => 29.99,
+            'price' => 90000,
             'quantity' => 35,
             'category_id' => 5,
             'supplier_id' => 5,
-            'created_by' => 1
+            'created_by' => 3
         ]);
 
         Item::create([
             'name' => 'Action Figure',
             'description' => 'Collectible action figure',
-            'price' => 24.99,
-            'quantity' => 45,
+            'price' => 1500000,
+            'quantity' => 2,
             'category_id' => 6,
             'supplier_id' => 6,
-            'created_by' => 1
+            'created_by' => 4
         ]);
 
         Item::create([
             'name' => 'Lipstick',
             'description' => 'Matte finish lipstick',
-            'price' => 9.99,
-            'quantity' => 70,
+            'price' => 100000,
+            'quantity' => 15,
             'category_id' => 7,
             'supplier_id' => 7,
-            'created_by' => 1
+            'created_by' => 4
         ]);
     }
 }

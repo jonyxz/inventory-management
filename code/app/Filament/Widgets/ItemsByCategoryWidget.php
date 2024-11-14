@@ -32,12 +32,24 @@ class ItemsByCategoryWidget extends BaseWidget
                 ->sortable(),
             Tables\Columns\TextColumn::make('price')
                 ->label('Price')
-                ->money('USD', true),
+                ->getStateUsing(function ($record) {
+                    return 'Rp. ' . number_format($record->price, 0, ',', '.');
+                }),
         ];
     }
 
     protected function getTablePagination(): ?int
     {
         return 10; 
+    }
+
+    protected function getHeader(): ?string
+    {
+        return 'Items by Category';
+    }
+
+    protected function getSubHeader(): ?string
+    {
+        return 'Menampilkan laporan barang berdasarkan kategori tertentu';
     }
 }

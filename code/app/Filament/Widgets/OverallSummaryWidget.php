@@ -24,11 +24,11 @@ class OverallSummaryWidget extends BaseWidget
                 ->description('Total number of items in inventory')
                 ->icon('heroicon-o-cube'),
 
-            Stat::make('Total Stock Value', number_format($totalStock))
+            Stat::make('Total Stock', number_format($totalStock))
                 ->description('Total all items in stock')
                 ->icon('heroicon-o-cube'),
                 
-            Stat::make('Total Stock Value', number_format($totalStockValue, 2))
+            Stat::make('Total Stock Value', 'Rp. ' . number_format($totalStockValue, 2, ',', '.'))
                 ->description('Total value of all items in stock')
                 ->icon('heroicon-o-currency-dollar'),
 
@@ -40,5 +40,15 @@ class OverallSummaryWidget extends BaseWidget
                 ->description('Number of suppliers')
                 ->icon('heroicon-o-truck'),
         ];
+    }
+
+    protected function getHeader(): ?string
+    {
+        return 'Overall Inventory Summary';
+    }
+
+    protected function getSubHeader(): ?string
+    {
+        return 'Menampilkan ringkasan dari keseluruhan sistem, termasuk total jumlah barang, nilai stok keseluruhan, jumlah kategori, dan jumlah pemasok';
     }
 }

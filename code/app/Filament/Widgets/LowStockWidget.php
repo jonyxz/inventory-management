@@ -25,12 +25,24 @@ class LowStockWidget extends BaseWidget
                 Tables\Columns\TextColumn::make('quantity')
                     ->label('Stock')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('price')
+                    Tables\Columns\TextColumn::make('price')
                     ->label('Price')
-                    ->money('USD', true),
+                    ->getStateUsing(function ($record) {
+                        return 'Rp. ' . number_format($record->price, 0, ',', '.');
+                    }),
             ])
             ->headerActions([])
             ->filters([])
             ->paginated(5); 
+    }
+
+    protected function getHeader(): ?string
+    {
+        return 'Low Stock Items';
+    }
+
+    protected function getSubHeader(): ?string
+    {
+        return 'Menampilkan daftar barang yang stoknya di bawah 5 unit.'; 
     }
 }

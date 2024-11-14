@@ -36,15 +36,27 @@ class SupplierSummaryWidget extends BaseWidget
             Tables\Columns\TextColumn::make('total_stock_value')
                 ->label('Total Stock Value')
                 ->getStateUsing(function ($record) {
-                    return $record->items->sum(function ($item) {
+                    $totalStockValue = $record->items->sum(function ($item) {
                         return $item->price * $item->quantity;
                     });
+                    return 'Rp. ' . number_format($totalStockValue, 2, ',', '.');
                 }),
             Tables\Columns\TextColumn::make('average_price')
                 ->label('Average Price of Items')
                 ->getStateUsing(function ($record) {
-                    return $record->items->avg('price');
+                    $averagePrice = $record->items->avg('price');
+                    return 'Rp. ' . number_format($averagePrice, 2, ',', '.');
                 }),
         ];
+    }
+
+    protected function getHeader(): ?string
+    {
+        return 'Supplier Summary';
+    }
+
+    protected function getSubHeader(): ?string
+    {
+        return 'Menampilkan ringkasan barang yang disuplai oleh masing-masing pemasok, termasuk jumlah barang per pemasok dan total nilai barang yang disuplai.';
     }
 }

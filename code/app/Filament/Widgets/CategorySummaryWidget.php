@@ -36,15 +36,29 @@ class CategorySummaryWidget extends BaseWidget
             Tables\Columns\TextColumn::make('total_stock_value')
                 ->label('Total Stock Value')
                 ->getStateUsing(function ($record) {
-                    return $record->items->sum(function ($item) {
+                    $totalValue = $record->items->sum(function ($item) {
                         return $item->price * $item->quantity;
                     });
+                    return 'Rp. ' . number_format($totalValue, 0, ',', '.');
                 }),
-            Tables\Columns\TextColumn::make('average_price')
-                ->label('Average Price')
+            Tables\Columns\TextColumn::make('total_stock_value')
+                ->label('Total Stock Value')
                 ->getStateUsing(function ($record) {
-                    return $record->items->avg('price');
+                    $totalValue = $record->items->sum(function ($item) {
+                        return $item->price * $item->quantity;
+                    });
+                    return 'Rp. ' . number_format($totalValue, 0, ',', '.');
                 }),
         ];
+    }
+
+    protected function getHeader(): ?string
+    {
+        return 'Category Summary';
+    }
+
+    protected function getSubHeader(): ?string
+    {
+        return 'Menampilkan ringkasan per kategori, termasuk jumlah barang per kategori, total nilai stok tiap kategori, dan rata-rata harga barang dalam kategori tersebut';
     }
 }
