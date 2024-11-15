@@ -95,7 +95,14 @@ Mengisi database dengan data dummy (opsional):
     php artisan migrate:fresh --seed
 ```
 
-### 🌐 Akses Aplikasi
+## 🌐 Akses Aplikasi
+
+Masuk ke shell container aplikasi `inventory-management-app` dan
+Memulai server Laravel Filament dengan Docker:
+
+```bash
+    php artisan serve --host=0.0.0.0 --port=8000
+```
 
 Setelah aplikasi berjalan, Anda dapat mengakses dashboard admin melalui:
 
