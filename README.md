@@ -1,9 +1,3 @@
-- **Disusun oleh**:
-  - Reza Aditya Ramadhan / A11.2022.14467
-  - Johan Ridho Akbar Auradhana / A11.2022.14472
-  - Muhammad Fachruddin / A11.2022.14476
-
-
 # Laravel Filament Inventory Management
 
 Sebuah aplikasi manajemen inventaris berbasis Laravel Filament yang dirancang untuk mengelola persediaan barang di suatu toko. Aplikasi ini berjalan dalam lingkungan Docker dengan PostgreSQL sebagai database utama.
